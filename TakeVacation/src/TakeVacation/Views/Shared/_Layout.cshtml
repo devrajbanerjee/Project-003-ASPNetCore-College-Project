@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" asp-href-include="lib/bootstrap/dist/css/*.min.css" />
+    <link rel="stylesheet" asp-href-include="/lib/fontawesome/css/*.css" />
+    <title>TakeVacation</title>
+</head>
+<body>
+    <div class="navbar" role="navigation">
+        <img src="~/lib/Images/TakeVacationBanner.jpg" alt="Banner" width="1300" />
+        <a class="navbar-brand"><h1>TAKE A VACATION</h1></a>
+        <div class="pull-right">@await Component.InvokeAsync("CartSummary")</div>
+    </div>
+
+    <div class="row panel">
+        <div id="categories" class="col-xl-3">
+            @await Component.InvokeAsync("NavigationMenu")            
+        </div>
+        <div class="col-xl-8">
+            @RenderBody()
+        </div>
+    </div> 
+</body>
+</html>
